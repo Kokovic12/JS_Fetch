@@ -9,8 +9,8 @@ fetch(API_URL +  `?days=${days}&location=${location}` , {
         }
      })
      .then(resp=>resp.json())     
-     .then((data)=>{output.innerHTML = JSON.stringify( data, null, '\t')})
-     .catch((error)=>{output.innerHTML = error})
+     .then((data)=>{output.textContent = JSON.stringify( data, null, '\t')})
+     .catch((error)=>{output.textContent = error})
 
 const inputDays = document.querySelector('.days');           
 const inputCity = document.querySelector('.city');                
