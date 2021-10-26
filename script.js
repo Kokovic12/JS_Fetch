@@ -19,10 +19,12 @@ const output = document.querySelector('.output');
 
       inputDays.addEventListener('change', () => {
         const resultDays = document.querySelector('.resultDays');
+        resultDays.textContent= inputDays.value;
       });
 
      inputCity.addEventListener('change', () => {
         const resultCity = document.querySelector('.resultCity');
+        resultCity.textContent=inputCity.value;
      });
 
     //  button_click.addEventListener('click', () => {
