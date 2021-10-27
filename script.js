@@ -1,24 +1,27 @@
 const API_TOKEN = 'YmVmYjliYmQtN2U0MC00MzkyLTgwNjUtYTA1ZTRkMzAwZTc0'
 const API_URL = 'https://api.m3o.com/v1/weather/Forecast'
 
-function getFetch() {             
-        fetch(API_URL +  `?days=${days}&location=${location}` , {
+function getFetch() {    
+    const inputDays = document.querySelector('.day').value           
+    const inputCity = document.querySelector('.city').value
+    const output = document.querySelector('.output')       
+
+    
+    fetch(API_URL +  `?days=${inputDays}&location=${inputCity}` , {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${API_TOKEN}`,
-        }}).then(resp => resp.json())   
-        .then((data) => {
-            output.textContent = JSON.stringify(data, null, '\t')
+    }})
+    .then(resp => resp.json())   
+    .then((data) => {
+        output.textContent = JSON.stringify(data, null, '\t')
         })        
-        .catch((error) => {
+    .catch((error) => {
             output.textContent = error
         })
-    }
+}
 
-const inputDays = document.querySelector('.day')           
-const inputCity = document.querySelector('.city')                  
-const output = document.querySelector('.output')         
 
 
     // inputDays.addEventListener('change', () => {
