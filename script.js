@@ -8,23 +8,23 @@ function getFetch() {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${API_TOKEN}`,
         }}).then(resp => resp.json())   
-         .then((data) => {
+        .then((data) => {
             output.textContent = JSON.stringify(data, null, '\t')
-        })
-         .catch((error) => {
+        })        
+        .catch((error) => {
             output.textContent = error
         })
     }
 
-const inputDays = document.querySelector('.days')           
+const inputDays = document.querySelector('.day')           
 const inputCity = document.querySelector('.city')                  
 const output = document.querySelector('.output')         
 
 
-    //   inputDays.addEventListener('change', () => {
+    // inputDays.addEventListener('change', () => {
     //     const resultDays = document.querySelector('.resultDays');
     //     resultDays.textContent= inputDays.value;
-    //   })
+    // })
 
     //  inputCity.addEventListener('change', () => {
     //     const resultCity = document.querySelector('.resultCity')
@@ -49,45 +49,13 @@ const output = document.querySelector('.output')
 //     })}
 
 
-//   Бредовый БРЕД
-    //  function render(data){
-    //      renderCity(data);
-    //      renderDays(data);
-
-    //  }
-
-    //  function renderCity(data){
-    //      let cityName=document.querySelector('.current_city');
-    //      cityName.innerHTML=data.city.name;
-    //  }
-
-    //  function renderDays(data){
-    //     let cityDays=document.querySelector('.current_days');
-    //     cityDays.innerHTML=data.days.name;
-    // }
-
-
-
-// Example 1
+// Example
 // const API_TOKEN = 'YmVmYjliYmQtN2U0MC00MzkyLTgwNjUtYTA1ZTRkMzAwZTc0';
 // const API_URL = 'https://api.m3o.com/v1/weather/Forecast';
 // const API_Params = new URLSearchParams({
 //     foo: 'value',
 //     bar: 2,
 // })
-
-
-// fetch(API_URL + API_Params,  {
-//         method:"GET",
-//         headers:{
-//             "Content-Type": `application/json`,
-//             "Authorization": `Bearer ${API_TOKEN}`,
-//         }
-//      })
-//      .then(resp=>resp.json())
-//      .then((data)=>{console.log(data)})
-//      .catch((error)=>{console.log(error)})
-
 
 
 // async function getWeather(method, url){
